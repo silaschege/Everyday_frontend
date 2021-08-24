@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { Button, Card } from "antd";
+import ApplicantForm from "../../components/job_application/Forms/ApplicantForm";
 
 
 
@@ -31,6 +32,7 @@ class ApplicantDetail extends React.Component {
          <p> Level of education:{this.state.applicant.Level_of_Education} </p>
          <p> Course:{this.state.applicant.Course} </p>
         </Card>
+        <ApplicantForm/>
       </div>
     );
   }

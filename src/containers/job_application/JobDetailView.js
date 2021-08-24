@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { Button, Card } from "antd";
-// import CustomForm from "../components/Form";
+import JobForm from "../../components/job_application/Forms/JobForm";
 
 
 class JobDetail extends React.Component {
@@ -46,6 +46,7 @@ class JobDetail extends React.Component {
           <p> Post:{this.state.job.Position} </p>
          <p> Level of education:{this.state.job.Education_level} </p>
         </Card>
+        <JobForm/>
         {/* hr administrator */}
         {/* <CustomForm
           {...this.props}

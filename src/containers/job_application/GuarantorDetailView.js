@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { Button, Card } from "antd";
+import GuarantorForm from "../../components/job_application/Forms/GuarantorForm";
 
 
 
@@ -31,6 +32,7 @@ class GuarantorDetail extends React.Component {
          <p> Email:{this.state.guarantor.Email} </p>
          <p> Relationship:{this.state.guarantor.Relationship} </p>
         </Card>
+        <GuarantorForm/>
       </div>
     );
   }

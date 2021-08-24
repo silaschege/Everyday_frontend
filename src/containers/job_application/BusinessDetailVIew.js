@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { Button, Card } from "antd";
-
+import BusinessForm from "../../components/job_application/Forms/BusinessForm";
 
 
 class BusinessDetail extends React.Component {
@@ -27,6 +27,7 @@ class BusinessDetail extends React.Component {
       <div>
         <Card title={this.state.business.Business_name}>
           <p> Name:{this.state.business.Business_name} </p>
+          <BusinessForm/>
         </Card>
       </div>
     );
