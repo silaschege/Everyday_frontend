@@ -27,11 +27,15 @@ class CustomLayout extends React.Component {
                     </Menu.Item>
 
                     <Menu.Item key="4">
-                        <Link to="/applications">Applications</Link>
+                        <Link to="/application">Applications</Link>
                     </Menu.Item>
 
                     <Menu.Item key="5">
                         <Link to="/jobapplicationbusiness">Business ja</Link>
+                    </Menu.Item>
+
+                    <Menu.Item key="6">
+                        <Link to="/guarantor">Guarantor</Link>
                     </Menu.Item>
 
     

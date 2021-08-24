@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Business from "../../components/job_application/Applicant";
+import Business from "../../components/job_application/Business";
 
 
 

@@ -14,7 +14,7 @@ const IconText = ({ type, text }) => (
   </span>
 );
 
-const Applications_made = props => {
+const Application = props => {
   return (
     <List
       itemLayout="vertical"
@@ -37,8 +37,8 @@ const Applications_made = props => {
         >
           <List.Item.Meta
             avatar={<Avatar src={item.avatar} />}
-            title={<a href={`/application_made/${item.Application_made_Id}`}> {item.Applicant} </a>}
-            description={item.Application_made_Id}
+            title={<a href={`/applications/${item.Application_made_Id}`}> {item.Applicant} </a>}
+            description={item.Job_listing}
           />
           {item.content}
         </List.Item>
@@ -47,4 +47,4 @@ const Applications_made = props => {
   );
 };
 
-export default Applications_made;
+export default Application;
