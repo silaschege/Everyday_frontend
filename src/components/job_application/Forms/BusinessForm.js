@@ -24,14 +24,14 @@ class ApplicantForm extends React.Component {
     };
     
     if (requestType === "post") {
-      await axios.post("http://127.0.0.1:8000/api_application/Applicant/create/", postObj)
+      await axios.post("http://127.0.0.1:8000/api_application/Business_vacancy/create/", postObj)
         .then(res => {
           if (res.status === 201) {
             this.props.history.push(`/`);
           }
         })
     } else if (requestType === "put") {
-      await axios.put(`http://127.0.0.1:8000/api_application/Applicant/${Applicant_Id}/update/`, postObj)
+      await axios.put(`http://127.0.0.1:8000/api_application/Business_vacancy/${Applicant_Id}/update/`, postObj)
         .then(res => {
           if (res.status === 200) {
             this.props.history.push(`/`);

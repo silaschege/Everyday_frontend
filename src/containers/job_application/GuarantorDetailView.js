@@ -21,6 +21,21 @@ class GuarantorDetail extends React.Component {
     });
   }
 
+  handleDelete = event => {
+    event.preventDefault();
+    const guarantorID = this.props.match.params.guarantorID;
+    axios.defaults.headers = {
+      "Content-Type": "application/json",
+      Authorization: `Token ${this.props.token}`
+    };
+    axios.delete(`http://127.0.0.1:8000/api_application/Guarantors/${guarantorID}/delete/`)
+    .then(res => {
+      if (res.status === 204) {
+        this.props.history.push(`/applicants`);
+      }
+    })
+  };
+
 
 
   render() {
@@ -32,7 +47,20 @@ class GuarantorDetail extends React.Component {
          <p> Email:{this.state.guarantor.Email} </p>
          <p> Relationship:{this.state.guarantor.Relationship} </p>
         </Card>
-        <GuarantorForm/>
+        <GuarantorForm
+        {...this.props}
+        token={this.props.token}
+        requestType="put"
+        Applicant_Id={this.props.match.params.articleID}
+        btnText="Update"
+        />
+
+        <form onSubmit={this.handleDelete}>
+        <Button type="danger" htmlType="submit">
+            Delete
+          </Button>
+        </form>
+
       </div>
     );
   }

@@ -20,7 +20,6 @@ class JobDetail extends React.Component {
     });
   }
 
-  
   handleDelete = event => {
     event.preventDefault();
     const jobID = this.props.match.params.jobID;
@@ -28,17 +27,16 @@ class JobDetail extends React.Component {
       "Content-Type": "application/json",
       Authorization: `Token ${this.props.token}`
     };
+    axios.delete(`http://127.0.0.1:8000/api_application/Listing/${jobID}/delete/`)
+    .then(res => {
+      if (res.status === 204) {
+        this.props.history.push(`/applicants`);
+      }
+    })
+  };
 
-    
-        // hr dahsboard
-  //   axios.delete(`http://127.0.0.1:8000/api_application/Listing/${jobID}/delete/`)
-  //   .then(res => {
-  //     if (res.status === 204) {
-  //       this.props.history.push(`/`);
-  //     }
-  //   })
-   };
-
+  
+  
   render() {
     return (
       <div>
@@ -46,20 +44,20 @@ class JobDetail extends React.Component {
           <p> Post:{this.state.job.Position} </p>
          <p> Level of education:{this.state.job.Education_level} </p>
         </Card>
-        <JobForm/>
-        {/* hr administrator */}
-        {/* <CustomForm
-          {...this.props}
-          token={this.props.token}
-          requestType="put"
-          articleID={this.props.match.params.articleID}
-          btnText="Update"
-        /> */}
+        <JobForm
+        {...this.props}
+        token={this.props.token}
+        requestType="put"
+        Applicant_Id={this.props.match.params.articleID}
+        btnText="Update"
+        />
 
-        {/* <form onSubmit={this.handleDelete}>
-          <Button type="danger" htmlType="submit">
+          <form onSubmit={this.handleDelete}>
+        <Button type="danger" htmlType="submit">
             Delete
-          </Button> */}
+          </Button>
+        </form>
+        
        
       </div>
     );

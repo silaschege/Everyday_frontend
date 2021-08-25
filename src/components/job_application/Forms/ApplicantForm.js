@@ -8,7 +8,7 @@ const FormItem = Form.Item;
 
 class ApplicantForm extends React.Component {
   
-  handleFormSubmit = async (event, requestType, Applicant_Id) => {
+  handleFormSubmit = async (event, requestType, applicantID) => {
     event.preventDefault();
 
     const postObj = {
@@ -27,14 +27,14 @@ class ApplicantForm extends React.Component {
       await axios.post("http://127.0.0.1:8000/api_application/Applicant/create/", postObj)
         .then(res => {
           if (res.status === 201) {
-            this.props.history.push(`/`);
+            this.props.history.push(`/applicants`);
           }
         })
     } else if (requestType === "put") {
-      await axios.put(`http://127.0.0.1:8000/api_application/Applicant/${Applicant_Id}/update/`, postObj)
+      await axios.put(`http://127.0.0.1:8000/api_application/Applicant/${applicantID}/update/`, postObj)
         .then(res => {
           if (res.status === 200) {
-            this.props.history.push(`/`);
+            this.props.history.push(`/applicants`);
           }
         })
     }
@@ -48,7 +48,7 @@ class ApplicantForm extends React.Component {
             this.handleFormSubmit(
               event,
               this.props.requestType,
-              this.props.articleID
+              this.props.applicantID
             )
           }
         >
@@ -106,7 +106,7 @@ class ApplicantForm extends React.Component {
 
           <FormItem>
             <Button type="primary" htmlType="submit">
-              {this.props.btnText}
+            {this.props.btnText}
             </Button>
           </FormItem>
 

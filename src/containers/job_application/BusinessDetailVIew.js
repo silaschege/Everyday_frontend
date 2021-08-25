@@ -20,6 +20,21 @@ class BusinessDetail extends React.Component {
     });
   }
 
+  handleDelete = event => {
+    event.preventDefault();
+    const businessID = this.props.match.params.businessID;
+    axios.defaults.headers = {
+      "Content-Type": "application/json",
+      Authorization: `Token ${this.props.token}`
+    };
+    axios.delete(`http://127.0.0.1:8000/api_application/Business_vacancy/${businessID}/delete/`)
+    .then(res => {
+      if (res.status === 204) {
+        this.props.history.push(`/applicants`);
+      }
+    })
+  };
+
   
 
   render() {
@@ -27,8 +42,24 @@ class BusinessDetail extends React.Component {
       <div>
         <Card title={this.state.business.Business_name}>
           <p> Name:{this.state.business.Business_name} </p>
-          <BusinessForm/>
-        </Card>
+          </Card>
+
+          <BusinessForm
+        {...this.props}
+        token={this.props.token}
+        requestType="put"
+        Applicant_Id={this.props.match.params.articleID}
+        btnText="Update"
+        />
+
+        <form onSubmit={this.handleDelete}>
+        <Button type="danger" htmlType="submit">
+            Delete
+          </Button>
+        </form>
+
+        
+
       </div>
     );
   }
