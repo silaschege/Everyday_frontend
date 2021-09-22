@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { Card } from "antd";
 import { HrLayout } from "../../templates/hr_manager/hrlayout";
 import axiosInstance from "../../../components/connection";
+import ComplainUpdateForm  from "../../../components/hr_management/complain/complainUpdateForm";
+import ComplainDeleteForm  from "../../../components/hr_management/complain/complainDeleteForm";
 
 
 
@@ -35,9 +37,12 @@ class ComplainDetail extends React.Component {
         <HrLayout>
         <Card title={this.state.complains.Staff_issue }>
           <p> Date :{this.state.complains.Date} </p>
-          <p> Disciplinary_Action :{this.state.complains.Disciplinary_Action } </p>
-          <p> Employee :{this.state.complains.Employee} </p>
+          <p> Action :{this.state.complains.Action } </p>
         </Card>
+
+        <ComplainUpdateForm/>
+        <ComplainDeleteForm/>
+       
         </HrLayout>
       </div>
     );

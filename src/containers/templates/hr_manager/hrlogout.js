@@ -12,7 +12,7 @@ export default function HrLogout() {
 		localStorage.removeItem('access_token');
 		localStorage.removeItem('refresh_token');
 		axiosInstance.defaults.headers['Authorization'] = null;
-		history.push('/hrhomepage');
+		history.push('/');
 	});
 	return <div>Logout</div>;
 }

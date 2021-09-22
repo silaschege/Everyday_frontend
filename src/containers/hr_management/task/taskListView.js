@@ -3,6 +3,8 @@ import axios from "axios";
 import Task from "../../../components/hr_management/task/task";
 import axiosInstance from "../../../components/connection";
 import { HrLayout } from "../../templates/hr_manager/hrlayout";
+import {Button} from "antd";
+import { Link, withRouter } from 'react-router-dom';
 
 
 
@@ -34,6 +36,10 @@ class TaskList extends React.Component {
     return (
       <div>
         <HrLayout>
+        <Button type="primary" htmlType="submit" onClick="location.href='/businesscreate'">
+        <Link to="/taskcreate">Create</Link>
+        </Button>
+
         <Task data={this.state.tasks} /> <br />
         </HrLayout>
       </div>

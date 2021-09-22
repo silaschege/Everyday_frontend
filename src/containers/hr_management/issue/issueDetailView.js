@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { Card } from "antd";
 import { HrLayout } from "../../templates/hr_manager/hrlayout";
 import axiosInstance from "../../../components/connection";
+import IssueUpdateForm  from "../../../components/hr_management/issue/issueUpdateForm";
+import IssueDeleteForm  from "../../../components/hr_management/issue/issueDeleteForm";
 
 
 
@@ -38,6 +40,9 @@ class IssueDetail extends React.Component {
           <p> Date  :{this.state.issue.Date } </p>
           <p> Disciplinary_Action :{this.state.issue.Disciplinary_Action} </p>
         </Card>
+        
+        <IssueUpdateForm/>
+        <IssueDeleteForm/>
         </HrLayout>
       </div>
     );

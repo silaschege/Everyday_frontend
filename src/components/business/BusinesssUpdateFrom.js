@@ -78,7 +78,6 @@ export default function BusinessUpdateForm () {
 
     return (
       <div>
-          {/* <HrLayout> */}
         <Form>
 
           <FormItem label="Business Name">
@@ -191,7 +190,6 @@ export default function BusinessUpdateForm () {
           </FormItem>
 
         </Form>
-        {/* </HrLayout> */}
       </div>
     );
   

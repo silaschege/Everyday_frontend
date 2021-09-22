@@ -26,7 +26,7 @@ export class PreLoginHrLayout extends React.Component{
     
 
        <Menu.Item key="2">
-        <Link to="/register/">Register</Link>
+        <Link to="/hrregister/">Register</Link>
        </Menu.Item>
 
        <Menu.Item key="3">

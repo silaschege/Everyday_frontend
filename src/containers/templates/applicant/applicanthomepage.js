@@ -5,7 +5,7 @@ import {Button} from "antd";
 
 function ApplicantHomepage (){
     const handleClick = () => {
-        window.open("/hrhomepage");
+        window.open("/");
       };
   
         return (

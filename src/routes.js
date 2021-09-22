@@ -30,35 +30,44 @@ import ApplicantHomepage from "./containers/templates/applicant/applicanthomepag
 import HrManagerHomepage from "./containers/templates/hr_manager/hrmanagerhomepage";
 import HrLogin from "./containers/templates/hr_manager/hrlogin";
 import HrLogout from "./containers/templates/hr_manager/hrlogout";
+import HrRegister from "./containers/templates/hr_manager/hrregister";
 
 import AnnoucememtList from "./containers/hr_management/announcement/announcementListVIew";
 import AnnouncemnetDetail from "./containers/hr_management/announcement/announcementDetailView";
+import AnnouncementCreateForm from "./components/hr_management/announcement/AnnouncementCreateForm";
 
 import ComplainList from "./containers/hr_management/complains/complainListView";
 import ComplainDetail from "./containers/hr_management/complains/complainDetailView";
+import ComplainCreateForm from "./components/hr_management/complain/complainCreateForm";
 
 import EmployeeList from "./containers/hr_management/employee/employeeListView";
 import EmployeeDetail from "./containers/hr_management/employee/employeeDetailView";
+import EmployeeCreateForm from "./components/hr_management/employee/employeeCreateForm";
 
 import IssueList from "./containers/hr_management/issue/issueListView";
 import IssueDetail from "./containers/hr_management/issue/issueDetailView";
+import IssueCreateForm from "./components/hr_management/issue/issueCreateForm";
 
 import TaskList from "./containers/hr_management/task/taskListView";
 import TaskDetail from "./containers/hr_management/task/taskDetailView";
+import TaskCreateForm from "./components/hr_management/task/taskCreateForm";
 
 import WorkdayList from "./containers/hr_management/workday/workdayListView";
 import WorkdayDetail from "./containers/hr_management/workday/workdayDetailView";
+import WorkdayCreateForm from "./components/hr_management/workday/workdayCreateForm";
 
 const BaseRouter = () => (
   <div>
-    <Route exact path="/" component={ApplicantHomepage} />{" "} 
+    <Route exact path="/applicanthomepage" component={ApplicantHomepage} />{" "} 
     <Route exact path="/applicantregister/" component={ApplicantRegister} />{" "} 
     <Route exact path="/applicantlogin/" component={ApplicantLogin} />{" "} 
     <Route exact path="/applicantlogout/" component={ApplicantLogout} />{" "} 
 
-    <Route exact path="/hrhomepage" component={HrManagerHomepage} />{" "} 
+    <Route exact path="/" component={HrManagerHomepage} />{" "} 
     <Route exact path="/hrlogin/" component={HrLogin} />{" "} 
     <Route exact path="/hrlogout/" component={HrLogout} />{" "} 
+    <Route exact path="/hrregister/" component={HrRegister} />{" "} 
+    
 
     <Route exact path="/applicant" component={ApplicantList} />{" "} 
     <Route exact path="/applicant/:applicantID/" component={ApplicantDetail} />{" "} 
@@ -80,22 +89,29 @@ const BaseRouter = () => (
 
     <Route exact path="/announcement" component={AnnoucememtList} />{" "} 
     <Route exact path="/announcement/:announcemnetID/" component={AnnouncemnetDetail} />{" "} 
+    <Route exact path="/announcementcreate" component={AnnouncementCreateForm} />{" "} 
 
     <Route exact path="/complain/" component={ComplainList} />{" "} 
     <Route exact path="/complain/:complainsID/" component={ComplainDetail} />{" "} 
+    <Route exact path="/complaincreate" component={ComplainCreateForm} />{" "}
+
 
 
     <Route exact path="/employee" component={EmployeeList} />{" "} 
     <Route exact path="/employee/:employeeID/" component={EmployeeDetail} />{" "} 
+    <Route exact path="/employeecreate" component={EmployeeCreateForm} />{" "} 
 
     <Route exact path="/issue" component={IssueList} />{" "} 
     <Route exact path="/issue/:issueID/" component={IssueDetail} />{" "} 
+    <Route exact path="/issuecreate" component={IssueCreateForm} />{" "} 
 
     <Route exact path="/task" component={TaskList} />{" "} 
     <Route exact path="/task/:taskID/" component={TaskDetail} />{" "} 
+    <Route exact path="/taskcreate" component={TaskCreateForm} />{" "} 
 
     <Route exact path="/workday" component={WorkdayList} />{" "} 
     <Route exact path="/workday/:workdayID/" component={WorkdayDetail} />{" "} 
+    <Route exact path="/workdaycreate" component={WorkdayCreateForm} />{" "} 
 
 
   </div>

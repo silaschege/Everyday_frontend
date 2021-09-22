@@ -3,7 +3,8 @@ import axios from "axios";
 import Complain from "../../../components/hr_management/complain/complain";
 import axiosInstance from "../../../components/connection";
 import { HrLayout } from "../../templates/hr_manager/hrlayout";
-
+import {Button} from "antd";
+import { Link, withRouter } from 'react-router-dom';
 
 
 class ComplainList extends React.Component {
@@ -34,6 +35,11 @@ class ComplainList extends React.Component {
     return (
       <div>
         <HrLayout>
+    
+        <Button type="primary" htmlType="submit" onClick="location.href='/businesscreate'">
+        <Link to="/complaincreate">Create</Link>
+        </Button>
+
         <Complain data={this.state.complains} /> <br />
         </HrLayout>
       </div>

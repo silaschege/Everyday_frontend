@@ -20,7 +20,7 @@ export class PreLoginApplicantLayout extends React.Component{
 
 
         <Menu.Item key="1">
-        <Link to="/">Everyday</Link>
+        <Link to="/applicanthomepage">Everyday</Link>
        </Menu.Item>
  
        <Menu.Item key="2">

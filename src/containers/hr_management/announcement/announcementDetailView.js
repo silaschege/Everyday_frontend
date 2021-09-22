@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { Card } from "antd";
 import { HrLayout } from "../../templates/hr_manager/hrlayout";
 import axiosInstance from "../../../components/connection";
+import AnnouncemntUpdateForm  from "../../../components/hr_management/announcement/AnnouncementUpdateForm";
+import AnnouncemntDeleteForm  from "../../../components/hr_management/announcement/AnnouncementDelete";
 
 
 
@@ -38,6 +40,10 @@ class AnnouncemnetDetail extends React.Component {
           <p> To:{this.state.announcemnets.To} </p>
           <p> Time:{this.state.announcemnets.Time} </p>
         </Card>
+
+        <AnnouncemntUpdateForm/>
+        <AnnouncemntDeleteForm/>
+
         </HrLayout>
       </div>
     );

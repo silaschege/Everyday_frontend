@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { Card } from "antd";
 import { HrLayout } from "../../templates/hr_manager/hrlayout";
 import axiosInstance from "../../../components/connection";
+import EmployeeUpdateForm  from "../../../components/hr_management/employee/employeeUpdateForm";
+import EmployeeDeleteForm  from "../../../components/hr_management/employee/employeeDeleteForm";
 
 
 
@@ -39,6 +41,9 @@ class EmployeeDetail extends React.Component {
           <p> Employee :{this.state.employee.Employee} </p>
           <p> Company_Position :{this.state.employee.Company_Position } </p>
         </Card>
+
+        <EmployeeUpdateForm/>
+        <EmployeeDeleteForm/>
         </HrLayout>
       </div>
     );
