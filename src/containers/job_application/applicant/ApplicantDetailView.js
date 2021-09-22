@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import { Card } from "antd";
 import { ApplicantLayout } from "../../templates/applicant/applicantlayout";
 import axiosInstance from "../../../components/connection";
-
+import ApplicantUpdateForm  from "../../../components/job_application/applicant/applicantUpdateForm";
+import ApplicantDeleteForm from "../../../components/job_application/applicant/applicantDeleteForm";
 
 
 
@@ -25,20 +26,7 @@ class ApplicantDetail extends React.Component {
     });
   }
 
-  // handleDelete = event => {
-  //   event.preventDefault();
-  //   const applicantID = this.props.match.params.applicantID;
-  //   axios.defaults.headers = {
-  //     "Content-Type": "application/json",
-  //     Authorization: `Token ${this.props.token}`
-  //   };
-  //   axios.delete(`http://127.0.0.1:8000/api/job/Applicant/${applicantID}/delete/`)
-  //   .then(res => {
-  //     if (res.status === 204) {
-  //       this.props.history.push(`/applicants`);
-  //     }
-  //   })
-  // };
+  
 
 
 
@@ -52,6 +40,9 @@ class ApplicantDetail extends React.Component {
          <p> Level of education:{this.state.applicant.Level_of_Education} </p>
          <p> Course:{this.state.applicant.Course} </p>
         </Card>
+
+        <ApplicantUpdateForm/>
+        <ApplicantDeleteForm/>
         </ApplicantLayout>
       </div>
     );

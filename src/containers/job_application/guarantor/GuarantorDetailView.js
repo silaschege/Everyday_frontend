@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { Card } from "antd";
 import { ApplicantLayout } from "../../templates/applicant/applicantlayout";
 import axiosInstance from "../../../components/connection";
+import GuarantorUpdateForm  from "../../../components/job_application/guarantor/guarantorUpdateForm";
+import GuarantorDeleteForm from "../../../components/job_application/guarantor/guarantorDeleteForm";
 
 
 
@@ -40,6 +42,8 @@ class GuarantorDetail extends React.Component {
           <p> Relationship:{this.state.guarantor.Relationship} </p>
           <p> Applicant:{this.state.guarantor.Applicant} </p>
         </Card>
+        <GuarantorUpdateForm/>
+        <GuarantorDeleteForm/>
         </ApplicantLayout>
       </div>
     );

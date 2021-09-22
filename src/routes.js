@@ -6,15 +6,18 @@ import { Route } from "react-router-dom";
 
 import ApplicantList from "./containers/job_application/applicant/ApplicantListView";
 import ApplicantDetail from "./containers/job_application/applicant/ApplicantDetailView";
+import ApplicantCreateForm from "./components/job_application/applicant/applicantCreateForm";
 
 import ApplicationMadeList from "./containers/job_application/application_made/Application_madeListView";
 import ApplicationMadeDetail from "./containers/job_application/application_made/Application_madeDetailView";
 
 import GuarantorList from "./containers/job_application/guarantor/GuarantorListView";
 import GuarantorDetail from "./containers/job_application/guarantor/GuarantorDetailView";
+import GuarantorCreateForm from "./components/job_application/guarantor/guarantorCreateForm";
 
 import JobList from "./containers/job_application/job_listing/Job_listingListView";
 import JobDetail from "./containers/job_application/job_listing/Job_listingDetailView";
+import JoblistingCreateForm from "./components/job_application/job_listing/joblistingCreateForm";
 
 import BusinessList from "./containers/business/Business/BusinessList";
 import BusinessDetail from "./containers/business/Business/BusinessDetail";
@@ -71,6 +74,7 @@ const BaseRouter = () => (
 
     <Route exact path="/applicant" component={ApplicantList} />{" "} 
     <Route exact path="/applicant/:applicantID/" component={ApplicantDetail} />{" "} 
+    <Route exact path="/applicantcreate" component={ApplicantCreateForm} />{" "} 
 
     <Route exact path="/business" component={BusinessList} />{" "} 
     <Route exact path="/business/:businessID/" component={BusinessDetail} />{" "} 
@@ -80,12 +84,15 @@ const BaseRouter = () => (
 
     <Route exact path="/application_made" component={ApplicationMadeList} />{" "} 
     <Route exact path="/application_made/:applicationID/" component={ApplicationMadeDetail} />{" "} 
+   
 
     <Route exact path="/guarantor" component={GuarantorList} />{" "} 
     <Route exact path="/guarantor/:guarantorID/" component={GuarantorDetail} />{" "} 
+    <Route exact path="/guarantorcreate" component={GuarantorCreateForm} />{" "} 
 
     <Route exact path="/joblisting" component={JobList} />{" "} 
     <Route exact path="/joblisting/:jobID/" component={JobDetail} />{" "} 
+    <Route exact path="/joblistingcreate" component={JoblistingCreateForm} />{" "} 
 
     <Route exact path="/announcement" component={AnnoucememtList} />{" "} 
     <Route exact path="/announcement/:announcemnetID/" component={AnnouncemnetDetail} />{" "} 
