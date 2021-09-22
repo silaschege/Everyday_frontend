@@ -59,8 +59,28 @@ import WorkdayList from "./containers/hr_management/workday/workdayListView";
 import WorkdayDetail from "./containers/hr_management/workday/workdayDetailView";
 import WorkdayCreateForm from "./components/hr_management/workday/workdayCreateForm";
 
+
+import EmployeeHomepage from "./containers/templates/employee/employeehomepage";
+import EmployeeRegister from "./containers/templates/employee/employeeregister";
+import EmployeeLogin from "./containers/templates/employee/employeelogin";
+import EmployeeTaskList from "./containers/employee/task/taskListView";
+import EmployeeTaskDetail from "./containers/employee/task/taskDetailView";
+import EmployeeLogout from "./containers/templates/employee/employeelogout";
+import EmployeeTaskCreateForm from "./components/employee/task/taskCreateForm";
+
+
+
 const BaseRouter = () => (
   <div>
+     <Route exact path="/employeehomepage" component={EmployeeHomepage} />{" "} 
+     <Route exact path="/employeeregister/" component={EmployeeRegister} />{" "} 
+     <Route exact path="/employeelogin/" component={EmployeeLogin} />{" "} 
+     <Route exact path="/employeetask/" component={EmployeeTaskList} />{" "} 
+     <Route exact path="/employeetaskcreate/" component={EmployeeTaskCreateForm} />{" "} 
+     <Route exact path="/employeetask/:taskID/" component={EmployeeTaskDetail} />{" "} 
+     <Route exact path="/employeelogout/" component={EmployeeLogout} />{" "} 
+     
+
     <Route exact path="/applicanthomepage" component={ApplicantHomepage} />{" "} 
     <Route exact path="/applicantregister/" component={ApplicantRegister} />{" "} 
     <Route exact path="/applicantlogin/" component={ApplicantLogin} />{" "} 
